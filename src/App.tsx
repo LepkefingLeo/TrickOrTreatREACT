@@ -4,7 +4,7 @@ import Loading from "./Loading.tsx";
 import Header from "./Header.tsx";
 import Summary from "./Summary.tsx";
 import TrickOrTreatList from "./TrickOrTreatList.tsx";
-import Footer from "./footer.tsx";
+import Footer from "./Footer.tsx";
 
 
 const API_URL = "https://retoolapi.dev/H3q9DF/data";
