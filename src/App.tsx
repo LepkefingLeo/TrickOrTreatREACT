@@ -30,10 +30,14 @@ export default function App() {
   }
 
   async function handleChange(item: Data) {
-    await fetch(`${API_URL}/${item.id}`, {
-      method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ isThereAnyCandyLeft: false }),
+    await fetch(`${API_URL}/${item.id}`, 
+      {
+        method: "PATCH",
+        headers: 
+        { 
+          "Content-Type": "application/json"  
+        },
+        body: JSON.stringify({ isThereAnyCandyLeft: false }),
     });
     fetchAddresses();
   }

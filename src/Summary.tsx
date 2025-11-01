@@ -6,11 +6,16 @@ export default function Summary({ addresses }: { addresses: Data[] }) {
 
   const sensitivityCount: Record<string, number> = {};
   addresses.forEach(a => {
-    const sens = Array.isArray(a.sensitivities)
-      ? a.sensitivities
-      : a.sensitivities
-      ? [a.sensitivities as unknown as string]
-      : ["None"];
+    let sens: string[];
+
+    if (Array.isArray(a.sensitivities)) {
+      sens = a.sensitivities;
+    } else if (a.sensitivities) {
+      sens = [a.sensitivities as unknown as string];
+    } else {
+      sens = ["None"];
+    }
+
 
     sens.forEach(s => {
       const key = s || "None";
